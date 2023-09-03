@@ -93,3 +93,11 @@ function reset() {
     userSeq = [];
     level = 0;
 }
+
+document.body.addEventListener("touchstart", function() {
+    if (started == false) {
+        console.log("Game started...");
+        started = true;
+        levelUp();
+    }
+});
