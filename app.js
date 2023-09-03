@@ -11,6 +11,10 @@ let highest = level;
 
 let h3 = document.querySelector(".show-details");
 
+if (window.innerWidth <= 768) {
+    h3.innerHTML = "Press <b>start</b> button tho start the game";
+  }
+
 document.addEventListener("keypress", function() {
     if(started == false) {
         console.log("Game started...");
