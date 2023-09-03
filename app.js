@@ -107,19 +107,11 @@ function reset() {
     level = 0;
 }
 
-// document.body.addEventListener("click", function() {
-//     if (started == false) {
-//         console.log("Game started...");
-//         started = true;
-//         levelUp();
-//     }
-// });
-
 startBtn.addEventListener("click", function() {
     if (started == false) {
         console.log("Game started...");
         started = true;
-        levelUp();
+        setTimeout(levelUp, 1000);
         startBtn.innerText = "Game started...";
     }
 });
