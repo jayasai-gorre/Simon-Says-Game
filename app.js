@@ -1,13 +1,15 @@
 let gameSeq = [];
 let userSeq = [];
 
+let startBtn = document.querySelector(".start-btn");
+
 let btns = ["yellow", "red", "purple", "green"];
 
 let started = false;
 let level = 0;
 let highest = level;
 
-let h3 = document.querySelector("h3");
+let h3 = document.querySelector(".show-details");
 
 document.addEventListener("keypress", function() {
     if(started == false) {
@@ -52,11 +54,22 @@ function checkAns(idx) {
             highestScore();
         }
     } else {
-        if(level == 0) {
-             h3.innerHTML = `Game Over! Your score is <b>${level}<b> <br> Press any key to start`;
+        if (isMobileDevice()) {
+            if(level == 0) {
+                h3.innerHTML = `Game Over! Your score is <b>${level}</b> <br> Press <b>start</b> button to start`;
+            } else {
+               h3.innerHTML = `Game Over! Your score is <b>${level - 1}</b> <br> Press <b>start</b> button to start`;
+            }
+            startBtn.innerText = "Start";
         } else {
-            h3.innerHTML = `Game Over! Your score is <b>${level - 1}<b> <br> Press any key to start`;
+            if(level == 0) {
+                h3.innerHTML = `Game Over! Your score is <b>${level}</b> <br> Press any key to start`;
+            } else {
+               h3.innerHTML = `Game Over! Your score is <b>${level - 1}</b> <br> Press any key to start`;
+            }
         }
+
+        
         reset();
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(function() {
@@ -94,10 +107,23 @@ function reset() {
     level = 0;
 }
 
-document.body.addEventListener("click", function() {
+// document.body.addEventListener("click", function() {
+//     if (started == false) {
+//         console.log("Game started...");
+//         started = true;
+//         levelUp();
+//     }
+// });
+
+startBtn.addEventListener("click", function() {
     if (started == false) {
         console.log("Game started...");
         started = true;
         levelUp();
+        startBtn.innerText = "Game started...";
     }
 });
+
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}

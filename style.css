@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&family=Poppins:wght@400;500;700&family=Roboto:wght@400;700&display=swap');
+
 body {
     text-align: center;
+    font-family: "Poppins",sans-serif;
+    overflow: hidden;
 }
 
 .btn {
@@ -8,6 +12,10 @@ body {
     border-radius: 20%;
     border: 4px solid black;
     margin: 1rem;
+}
+
+h3 {
+    font-weight: 500;
 }
 
 .btn-container {
@@ -44,6 +52,13 @@ body {
     font-size: 1.15rem;
 }
 
+.start-btn {
+    margin: 1rem;
+    position: relative;
+    display: none;
+}
+
+
 @media screen and (max-width: 400px) {
     .btn {
         height: 120px;
@@ -51,6 +66,19 @@ body {
         border-radius: 20%;
         border: 4px solid black;
         margin: 1rem;
+    }
+    .start-btn {
+        display:inline;
+        margin-top: 1.5rem;
+        padding: 5px 10px;
+        background-color: #CBFFA9;
+        border-radius: 10px;
+        text-align: center;
+        margin: 200px auto;
+        color: black;
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+
     }
 }
 
@@ -60,7 +88,19 @@ body {
         width: 100px;
         border-radius: 20%;
         border: 4px solid black;
-        margin: 1rem;
+        margin-top: 1.5rem;
+    }
+    .start-btn {
+        display:inline;
+        margin-top: 1.5rem;
+        padding: 5px 10px;
+        background-color: #CBFFA9;
+        border-radius: 10px;
+        text-align: center;
+        margin: 200px auto;
+        color: black;
+        letter-spacing: 1px;
+        font-size: 1.2rem;
     }
 }
 
@@ -71,5 +111,18 @@ body {
         border-radius: 20%;
         border: 4px solid black;
         margin: 0.75rem;
+    }
+    .start-btn {
+        display:inline;
+        margin-top: 1.5rem;
+        padding: 5px 10px;
+        background-color: #CBFFA9;
+        border-radius: 10px;
+        text-align: center;
+        margin: 200px auto;
+        color: black;
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+
     }
 }
