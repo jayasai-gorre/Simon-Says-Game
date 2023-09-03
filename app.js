@@ -94,7 +94,7 @@ function reset() {
     level = 0;
 }
 
-document.body.addEventListener("touchstart", function() {
+document.body.addEventListener("click", function() {
     if (started == false) {
         console.log("Game started...");
         started = true;
